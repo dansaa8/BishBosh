@@ -5,59 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bish-Bosh 2.0</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <header>
-    <h1>Bish-Bosh 2.0</h1>
+    <h1><span class="bish">Bish</span>-<span class="bosh">Bosh </span>2.0</h1>
 </header>
 
 <body>
     <main>
-        <section>
-
+        <button id="toggle-info-btn">Show/Hide Information</button>
+        <section id="info-section" class="hidden">
             <div>
                 <h2>Information about this app: </h2>
                 <p>This app takes 3 numbers as input. </p>
             </div>
 
-            <div>
-                <h3>Iterations input:</h3>
-                <p>Counts how many times a number from 1-(the entered value) is supposed to loop for </p>
+            <div id="info-boxes">
+                <div>
+                    <h3>Iterations input:</h3>
+                    <p>Counts how many times a number from 1-(the entered value) is supposed to loop for </p>
+                </div>
+
+                <div>
+                    <h3> <span class="bish">Bish input:</span></h3>
+                    <p> Every time the entered number in Bish field is divisble by any number from 1 to the entered
+                        iterations input; Bish will be printed</p>
+                </div>
+
+                <div>
+                    <h3><span class="bosh">Bosh input: </span></h3>
+                    <p> Every time the entered number in Bosh field is divisble by any number from 1 to the entered
+                        iterations input; Bosh will be printed</p>
+                </div>
+
+                <div>
+                    <h3>Other cases:</h3>
+                    <p>If the number is divisble by both Bish and Bosh, then Bish-Bosh will be printed</p>
+                    <p>If the number is not divisable by either Bish or Bosh, then the number will be printed instead
+                    </p>
+                </div>
             </div>
+        </section>
 
+        <section id="input-section">
+            <form>
+                <input type="number" name="iterations" placeholder="iterations" maxlength="3">
+                <input type="number" name="bish-input" placeholder="bish input" maxlength="3">
+                <input type="number" name="bosh-input" placeholder="bosh input" maxlength="3">
+                <button type="submit" id="form-button">
+                    Submit
+                </button>
+            </form>
+        </section>
 
-            <div>
-                <h3> Bish input: </h3>
-                <p> Every time the entered number in Bish field is divisble by any number from 1 to the entered
-                    iterations input; Bish will be printed</p>
-            </div>
-
-
-            <div>
-                <h3>Bosh input: </h3>
-                <p> Every time the entered number in Bosh field is divisble by any number from 1 to the entered
-                    iterations input; Bosh will be printed</p>
-            </div>
-
-
-            <div>
-                <h3>Other cases:</h3>
-                <p>If the number is divisble by both Bish and Bosh, then Bish-Bosh will be printed</p>
-                <p>If the number is not divisable by either Bish or Bosh, then the number will be printed instead</p>
-            </div>
+        <section id="output-section">
 
         </section>
-        <form>
-            <input type="number" name="iterations" placeholder="iterations" maxlength="3">
-            <input type="number" name="bish-input" placeholder="bish input" maxlength="3">
-            <input type="number" name="bosh-input" placeholder="bosh input" maxlength="3">
-            <button type="submit" id="form-button">
-                Submit
-            </button>
-        </form>
-        <div id="output">
-
-        </div>
     </main>
     <script src="script.js"></script>
 

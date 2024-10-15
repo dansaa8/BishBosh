@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
-const output = document.querySelector('#output');
+const outputSection = document.querySelector('#output-section');
+const infoButton = document.querySelector('#toggle-info-btn');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -13,27 +14,71 @@ form.addEventListener('submit', (e) => {
   e.target.reset();
 
   const result = BishBosh(iterationsValue, bishValue, boshValue);
-  const textNode = document.createTextNode(result);
-  const p = document.createElement('p');
-  p.appendChild(textNode);
-  
-  output.appendChild(p);
+
+  outputSection.appendChild(result);
+});
+
+infoButton.addEventListener('click', function () {
+  const infoSection = document.querySelector('#info-section');
+  infoSection.classList.toggle('visible');
 });
 
 function BishBosh(iterations, bishDivisor, boshDivisor) {
-  let result = '';
+  const container = document.createElement('div');
+  container.className = 'bish-bosh-container';
+
   for (let i = 1; i <= iterations; i++) {
-    let message = '';
+    const p = document.createElement('p');
 
-    if (i % bishDivisor === 0 && i % boshDivisor === 0) message += 'Bish-Bosh';
-    else if (i % bishDivisor === 0) message += 'Bish';
-    else if (i % boshDivisor === 0) message += 'Bosh';
+    if (i % bishDivisor === 0 && i % boshDivisor === 0) {
+      p.appendChild(createBishBosh());
+    } else if (i % bishDivisor === 0) {
+      p.appendChild(createBish());
+    } else if (i % boshDivisor === 0) {
+      p.appendChild(createBosh());
+    } else {
+      p.appendChild(createNumber(i));
+    }
 
-    if (message === '') message += i;
-
-    if (i < iterations) message += ', ';
-
-    result += message;
+    container.appendChild(p);
   }
-  return result;
+
+  return container;
+}
+
+function createBish() {
+  const bishSpan = document.createElement('span');
+  bishSpan.className = 'yellow';
+  bishSpan.textContent = 'Bish';
+  return bishSpan;
+}
+
+function createBosh() {
+  const boshSpan = document.createElement('span');
+  boshSpan.className = 'orange';
+  boshSpan.textContent = 'Bosh';
+  return boshSpan;
+}
+
+function createBishBosh() {
+  const container = document.createElement('span'); // Container for Bish-Bosh
+
+  const bishSpan = createBish();
+  const dashSpan = document.createElement('span');
+  dashSpan.className = 'white';
+  dashSpan.textContent = '-';
+  const boshSpan = createBosh();
+
+  container.appendChild(bishSpan);
+  container.appendChild(dashSpan);
+  container.appendChild(boshSpan);
+
+  return container;
+}
+
+function createNumber(num) {
+  const numberSpan = document.createElement('span');
+  numberSpan.className = 'green';
+  numberSpan.textContent = num;
+  return numberSpan;
 }
