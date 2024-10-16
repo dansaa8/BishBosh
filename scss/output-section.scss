@@ -1,0 +1,30 @@
+#output-section {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    background-color: $base-color2;
+    border: 1px solid $border-color;
+}
+
+.bish-bosh-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    min-height: 200px;
+    width: 100%;
+    
+    p {
+        display: block;
+        border: 1px solid $border-color;
+        padding: 10px;
+        height: 45px;
+        width: 60px;
+        text-align: center;
+        border-radius: $border-radius-medium;
+    }
+}
+
+.bish-bosh-padding {
+    padding: 4px !important;
+}

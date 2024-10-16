@@ -15,6 +15,8 @@ form.addEventListener('submit', (e) => {
 
   const result = BishBosh(iterationsValue, bishValue, boshValue);
 
+  outputSection.innerHTML = '';
+
   outputSection.appendChild(result);
 });
 
@@ -31,6 +33,7 @@ function BishBosh(iterations, bishDivisor, boshDivisor) {
     const p = document.createElement('p');
 
     if (i % bishDivisor === 0 && i % boshDivisor === 0) {
+      p.classList.add('bish-bosh-padding');
       p.appendChild(createBishBosh());
     } else if (i % bishDivisor === 0) {
       p.appendChild(createBish());
@@ -48,14 +51,14 @@ function BishBosh(iterations, bishDivisor, boshDivisor) {
 
 function createBish() {
   const bishSpan = document.createElement('span');
-  bishSpan.className = 'yellow';
+  bishSpan.className = 'bish';
   bishSpan.textContent = 'Bish';
   return bishSpan;
 }
 
 function createBosh() {
   const boshSpan = document.createElement('span');
-  boshSpan.className = 'orange';
+  boshSpan.className = 'bosh';
   boshSpan.textContent = 'Bosh';
   return boshSpan;
 }
@@ -65,7 +68,7 @@ function createBishBosh() {
 
   const bishSpan = createBish();
   const dashSpan = document.createElement('span');
-  dashSpan.className = 'white';
+  dashSpan.className = 'number';
   dashSpan.textContent = '-';
   const boshSpan = createBosh();
 
@@ -78,7 +81,7 @@ function createBishBosh() {
 
 function createNumber(num) {
   const numberSpan = document.createElement('span');
-  numberSpan.className = 'green';
+  numberSpan.className = 'number';
   numberSpan.textContent = num;
   return numberSpan;
 }

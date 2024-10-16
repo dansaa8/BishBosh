@@ -1,0 +1,45 @@
+#input-section {
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input {
+    background-color: $base-color3;
+    color: $text-color;
+    font-size: large;
+    border-color: $text-color;
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+
+    button {
+      height: 30px;
+    }
+  }
+}
+
+.form-group {
+  flex: 1;
+  min-width: 150px;
+  border-color: $border-color;
+}
+
+#form-button {
+  flex: 1 1 100%;
+}
+
+#toggle-info-btn {
+  max-width: 900px;
+  width: 100%;
+  height: 40px;
+}

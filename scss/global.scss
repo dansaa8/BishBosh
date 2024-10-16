@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  color: $text-color;
+  background-color: $base-color;
+}
+
+header {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  border-bottom: 2px solid $border-color;
+
+  h1 {
+    margin: 0;
+    padding: 15px;
+    font-size: 45px;
+  }
+}
+
+main {
+  max-width: 1120px;
+  min-height: 500px;
+  // border: 1px solid $border-color;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+footer {
+  padding: 0px;
+  margin-top: 20px;
+  border-top: 2px solid $border-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    display: block;
+    text-align: center;
+    margin: 5px;
+  }
+}
+
+section {
+  border: 1px solid $border-color;
+  background-color: $base-color3;
+  margin: 20px;
+  margin: auto;
+  border-radius: $border-radius-small;
+}
+
+button {
+    border-radius: $border-radius-medium;
+}
+
+.hidden {
+  display: none;
+}
+
+.bish {
+  color: $bish-color;
+}
+
+.bosh {
+  color: $bosh-color;
+}
+
+.number {
+  color: $number-color;
+}

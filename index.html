@@ -18,7 +18,6 @@
         <section id="info-section" class="hidden">
             <div>
                 <h2>Information about this app: </h2>
-                <p>This app takes 3 numbers as input. </p>
             </div>
 
             <div id="info-boxes">
@@ -50,13 +49,26 @@
 
         <section id="input-section">
             <form>
-                <input type="number" name="iterations" placeholder="iterations" maxlength="3">
-                <input type="number" name="bish-input" placeholder="bish input" maxlength="3">
-                <input type="number" name="bosh-input" placeholder="bosh input" maxlength="3">
+                <div class="form-group">
+                    <label for="iterations">Iterations:</label>
+                    <input type="number" id="iterations" name="iterations"  maxlength="3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="bish-input"><span class="bish">Bish Input:</span></label>
+                    <input type="number" id="bish-input" name="bish-input"  maxlength="3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="bosh-input"><span class="bosh">Bosh Input:</span></label>
+                    <input type="number" id="bosh-input" name="bosh-input"  maxlength="3">
+                </div>
+                
                 <button type="submit" id="form-button">
                     Submit
                 </button>
             </form>
+            
         </section>
 
         <section id="output-section">

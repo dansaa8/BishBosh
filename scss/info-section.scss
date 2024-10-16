@@ -1,0 +1,44 @@
+#info-section {
+    transition: all 0.3s ease-in-out;
+    display: none;
+    max-width: 900px;
+    width: 100%;
+  
+    div {
+      text-align: center;
+      border-bottom: 1px solid $border-color;
+  
+      h2 {
+        font-size: 35px;
+      }
+  
+      h3 {
+        font-size: 25px;
+      }
+    }
+  }
+  
+  #info-section.visible {
+    display: block;
+  }
+  
+  #info-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
+    background-color: $base-color2;
+  
+    div {
+      max-width: 500px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-medium;
+      background-color: $base-color3;
+    }
+  
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
